@@ -1,5 +1,6 @@
 
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const Header = () => {
@@ -10,25 +11,25 @@ const Header = () => {
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <a href="/" className="text-2xl font-bold text-white">
+            <Link to="/" className="text-2xl font-bold text-white">
               North Trust Bank
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#" className="text-white hover:text-accent transition-colors">
+            <Link to="/personal" className="text-white hover:text-accent transition-colors">
               Personal
-            </a>
-            <a href="#" className="text-white hover:text-accent transition-colors">
+            </Link>
+            <Link to="/business" className="text-white hover:text-accent transition-colors">
               Business
-            </a>
-            <a href="#" className="text-white hover:text-accent transition-colors">
+            </Link>
+            <Link to="/wealth" className="text-white hover:text-accent transition-colors">
               Wealth
-            </a>
-            <a href="#" className="text-white hover:text-accent transition-colors">
+            </Link>
+            <Link to="/about" className="text-white hover:text-accent transition-colors">
               About Us
-            </a>
+            </Link>
             <Button className="bg-accent hover:bg-accent-hover text-primary font-semibold">
               Login
             </Button>
@@ -60,30 +61,30 @@ const Header = () => {
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
           <div className="md:hidden mt-4 space-y-4">
-            <a
-              href="#"
+            <Link
+              to="/personal"
               className="block text-white hover:text-accent transition-colors"
             >
               Personal
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/business"
               className="block text-white hover:text-accent transition-colors"
             >
               Business
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/wealth"
               className="block text-white hover:text-accent transition-colors"
             >
               Wealth
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/about"
               className="block text-white hover:text-accent transition-colors"
             >
               About Us
-            </a>
+            </Link>
             <Button className="w-full bg-accent hover:bg-accent-hover text-primary font-semibold">
               Login
             </Button>

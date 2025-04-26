@@ -1,10 +1,21 @@
 
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useAuth } from "@/contexts/AuthContext";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { user, signOut } = useAuth();
+  const navigate = useNavigate();
+
+  const handleAuth = () => {
+    if (user) {
+      navigate('/dashboard');
+    } else {
+      navigate('/auth');
+    }
+  };
 
   return (
     <header className="bg-primary shadow-md">
@@ -30,8 +41,11 @@ const Header = () => {
             <Link to="/about" className="text-white hover:text-accent transition-colors">
               About Us
             </Link>
-            <Button className="bg-accent hover:bg-accent-hover text-primary font-semibold">
-              Login
+            <Button 
+              className="bg-accent hover:bg-accent-hover text-primary font-semibold"
+              onClick={handleAuth}
+            >
+              {user ? "Dashboard" : "Login"}
             </Button>
           </div>
 
@@ -64,29 +78,39 @@ const Header = () => {
             <Link
               to="/personal"
               className="block text-white hover:text-accent transition-colors"
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               Personal
             </Link>
             <Link
               to="/business"
               className="block text-white hover:text-accent transition-colors"
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               Business
             </Link>
             <Link
               to="/wealth"
               className="block text-white hover:text-accent transition-colors"
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               Wealth
             </Link>
             <Link
               to="/about"
               className="block text-white hover:text-accent transition-colors"
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               About Us
             </Link>
-            <Button className="w-full bg-accent hover:bg-accent-hover text-primary font-semibold">
-              Login
+            <Button 
+              className="w-full bg-accent hover:bg-accent-hover text-primary font-semibold"
+              onClick={() => {
+                handleAuth();
+                setIsMobileMenuOpen(false);
+              }}
+            >
+              {user ? "Dashboard" : "Login"}
             </Button>
           </div>
         )}

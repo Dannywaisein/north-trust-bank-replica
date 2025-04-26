@@ -1,5 +1,6 @@
 
 import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -10,24 +11,24 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Personal Banking</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="hover:text-accent transition-colors">
+                <Link to="/personal" className="hover:text-accent transition-colors">
                   Checking Accounts
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-accent transition-colors">
+                <Link to="/personal" className="hover:text-accent transition-colors">
                   Savings Accounts
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-accent transition-colors">
+                <Link to="/personal" className="hover:text-accent transition-colors">
                   Credit Cards
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-accent transition-colors">
+                <Link to="/personal" className="hover:text-accent transition-colors">
                   Mortgages
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -35,24 +36,24 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Business Banking</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="hover:text-accent transition-colors">
+                <Link to="/business" className="hover:text-accent transition-colors">
                   Business Accounts
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-accent transition-colors">
+                <Link to="/business" className="hover:text-accent transition-colors">
                   Lending
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-accent transition-colors">
+                <Link to="/business" className="hover:text-accent transition-colors">
                   Merchant Services
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-accent transition-colors">
+                <Link to="/business" className="hover:text-accent transition-colors">
                   Treasury Management
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -60,42 +61,42 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">About Us</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="hover:text-accent transition-colors">
+                <Link to="/about" className="hover:text-accent transition-colors">
                   Our Story
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-accent transition-colors">
+                <Link to="/about" className="hover:text-accent transition-colors">
                   Careers
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-accent transition-colors">
+                <Link to="/about" className="hover:text-accent transition-colors">
                   Community
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-accent transition-colors">
+                <Link to="/about" className="hover:text-accent transition-colors">
                   Security
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
           <div>
             <h3 className="text-lg font-semibold mb-4">Connect With Us</h3>
             <div className="flex space-x-4">
-              <a href="#" className="hover:text-accent transition-colors">
+              <Link to="#" className="hover:text-accent transition-colors">
                 <Facebook className="w-6 h-6" />
-              </a>
-              <a href="#" className="hover:text-accent transition-colors">
+              </Link>
+              <Link to="#" className="hover:text-accent transition-colors">
                 <Twitter className="w-6 h-6" />
-              </a>
-              <a href="#" className="hover:text-accent transition-colors">
+              </Link>
+              <Link to="#" className="hover:text-accent transition-colors">
                 <Instagram className="w-6 h-6" />
-              </a>
-              <a href="#" className="hover:text-accent transition-colors">
+              </Link>
+              <Link to="#" className="hover:text-accent transition-colors">
                 <Linkedin className="w-6 h-6" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -108,3 +109,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

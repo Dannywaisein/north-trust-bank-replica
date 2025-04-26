@@ -5,7 +5,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import DashboardLayout from "@/components/DashboardLayout";
-import { BarChart, PieChart } from "@/components/ui/chart";
+import { BarChart } from "@/components/ui/charts/bar-chart"; // Fixed import
+import { PieChart } from "@/components/ui/charts/pie-chart"; // Fixed import
 import { Loader2, ArrowUp, ArrowDown, CreditCard, PiggyBank, AlertTriangle } from "lucide-react";
 import { Link } from "react-router-dom";
 

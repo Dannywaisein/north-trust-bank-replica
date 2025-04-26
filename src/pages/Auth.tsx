@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useAuth } from "@/contexts/AuthContext";
 import { Routes, Route, Navigate, Link, useNavigate } from "react-router-dom";
@@ -12,8 +11,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { supabase } from "@/integrations/supabase/client";
 
-// Login component
 const Login = () => {
   const { signIn } = useAuth();
   const navigate = useNavigate();
@@ -93,7 +92,6 @@ const Login = () => {
   );
 };
 
-// Register component
 const Register = () => {
   const { signUp } = useAuth();
 
@@ -217,7 +215,6 @@ const Register = () => {
   );
 };
 
-// Verification page
 const Verification = () => {
   return (
     <Card className="w-full max-w-md mx-auto">
@@ -256,7 +253,6 @@ const Verification = () => {
   );
 };
 
-// Forgot password component
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -335,11 +331,9 @@ const ForgotPassword = () => {
   );
 };
 
-// Auth container component
 const Auth = () => {
   const { user } = useAuth();
 
-  // Redirect to dashboard if already logged in
   if (user) {
     return <Navigate to="/dashboard" />;
   }
